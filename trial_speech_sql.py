@@ -5,9 +5,7 @@ Created on Wed Apr  3 14:49:32 2019
 @author: HTS
 """
 
-#import string
 import speech_recognition as sr
-#import speechrecognition as sr
 import cx_Oracle
 
 con = cx_Oracle.connect('system/nokia@127.0.0.1/XE')
@@ -41,11 +39,8 @@ while exit1 == False:
     text = ' '.join(text)
     print('Final   -> ',text)
     cur.execute(text)
-    #mydata1 = cur.fetchone() #retrieve the first row
-    #print(mydata1[0],mydata1[1],mydata1[2]) #Print the first column retrieved(user's name)
     all_rows = cur.fetchall()
     for row in all_rows:
-    # row[0] returns the first column in the query (id), row[1] returns name column.
         print('{0} : {1}, {2}'.format(row[0], row[1], row[2]))
             
     exit1 = bool(input("Exit? (True/False)"))
