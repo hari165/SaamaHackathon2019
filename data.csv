@@ -1,4 +1,4 @@
-DrugID,DrugName,Manufacturer,Sales,Generic,Classification
+DrugID,DrugName,Manufacturer,Sales,GenericName,Classification
 AIN-140,Monodox,Lupin,631,Doxycycline,Anti Infective
 PPI-88,Pantop40,Aristo,112,Pantoprazole,Proton Pump Inhibitor
 ADP-45,Zoloft,Pfizer,431,Sertraline,Antidepressant
