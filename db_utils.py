@@ -12,6 +12,6 @@ def db_executor(con, sql_text):
 	result = cur.fetchall()
 	for row in result:
 		for item in row:
-			print(item, end = " ")
+			print(item, end = "\t")
 		print("")
 	print("--------------------------------------------------------------------------------------------")
