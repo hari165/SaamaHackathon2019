@@ -1,0 +1,21 @@
+DrugID,DrugName,Manufacturer,Sales,Generic,Classification
+AIN-140,Monodox,Lupin,631,Doxycycline,Anti Infective
+PPI-88,Pantop40,Aristo,112,Pantoprazole,Proton Pump Inhibitor
+ADP-45,Zoloft,Pfizer,431,Sertraline,Antidepressant
+AIM-21,Advil,Pfizer,124,Ibuprofen,Anti Inflammatory
+STI-86,Adderall,Shire,551,Amphetamine,Stimulant
+ABI-185,Azithral,Alembic,833,Azithromycin,Antibiotics
+BEN-61,Trapex,Sun Pharma,357,Lorazepam,Benzodiazepines
+BEN-66,Xanax,Pfizer,473,Alprazolam,Benzodiazepines
+ANA-73,Oxaydo,Acura,112,Oxycodone,Analgesics
+ANA-75,Crocin,GSK,147,Paracetamol,Analgesics
+ANA-35,Pandol,GSK,351,Paracetamol,Analgesics
+ANA-36,Acet,,212,Paracetamol,Analgesics
+ANA-48,Calpol,Johnson & Johnson,531,Paracetamol,Analgesics
+ANA-49,Benrdryl,Johnson & Johnson,147,Diphenhydramine,Antihistamine
+LED-10,GenTeal,Novartis,537,Hypromellose,Lubricant Eye Drops
+ANU-65,Ancobon,Lupin,642,Flucytosine,Antifungal
+ACV-123,Keppra,Lupin,426,Levetiracetam,Anticonvulsant
+ACI-196,Zestril,Lupin,971,Lisinopril,ACE Inhibitor
+ANT-99,Relafen,Lupin,251,Nabumetione,Antiarthritics
+CHE-164,Arranon,Novartis,856,Nelarabine,Chemotherapy
