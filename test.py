@@ -1,25 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
-
-
-# In[2]:
-
-
 import re
 import spacy
 import nltk
+
 from nltk.tokenize.toktok import ToktokTokenizer
 tokenizer=ToktokTokenizer()
-
-
-# In[3]:
-
 
 nlp=spacy.load('en_core',parse=True,tag=True,entity=True)
 stopword_list=set(nltk.corpus.stopwords.words('english'))
@@ -27,16 +13,8 @@ stopword_list.add('write')
 stopword_list.add('query')
 stopword_list.add('sql') 
 
-
-# In[4]:
-
-
 Drugs=pd.read_excel("C:\\Users\\sagar\\Downloads\\EmpSqlQueries.xlsx",header=None,names=['Query'])
-Drugs.head()
-
-
-# In[5]:
-
+print(Drugs.head())
 
 def remove_special_char(text):
     pattern=r'[^a-zA-z0-9\s]'
@@ -45,20 +23,12 @@ def remove_special_char(text):
 
 remove_special_char("Hello my name is $@gaR")
 
-
-# In[6]:
-
-
 def lemmatization(text):
     text=nlp(text)
     text=' '.join([word.lemma_ if word.lemma_!='-PRON-' else word.text for word in text])
     return text
 
 lemmatization("My System Crashed Yesterday and Today is Hackathon")
-
-
-# In[7]:
-
 
 def remove_Stopword(text):
     tokens=tokenizer.tokenize(text)
@@ -68,10 +38,6 @@ def remove_Stopword(text):
     return filtered_tokens
 
 remove_Stopword("Hey Hari  what how are you")
-
-
-# In[8]:
-
 
 def normalized_Corpus(corpus):
     normalize_corpus=[]
@@ -91,17 +57,11 @@ def normalized_Corpus(corpus):
     return normalize_corpus
 
 
-# In[9]:
-
-
 """Drugs['clean_text']=normalized_Corpus(Drugs['Query'])
 norm_corpus=list(Drugs['clean_text'])
 
 #Sample
 Drugs.iloc[1][['Query','clean_text']].to_dict()"""
-
-
-# In[10]:
 
 
 """
@@ -121,8 +81,6 @@ p
 """
 
 
-# In[11]:
-
 
 '''
 from spacy import displacy
@@ -133,71 +91,28 @@ displacy.render(sentence_nlp, jupyter=True,
                          'arrow_width': 8})
                          '''
 
-
-# In[12]:
-
-
 #sentence = str(Drugs.Query)
 #nltk_pos_tagged = nltk.pos_tag(sentence.split())
 #print(nltk_pos_tagged)
 
 
-# In[13]:
-
-
 #Drugs.head()
-
-
-# In[14]:
-
 
 Drugs['preprocessed'] = Drugs['Query'].apply(str.split)
 
-
-# In[15]:
-
-
 Drugs['preprocessed'] = Drugs['preprocessed'].apply(nltk.pos_tag)
 
-
-# In[16]:
-
-
-Drugs['preprocessed'][0]
-
-
-# In[17]:
-
+print(Drugs['preprocessed'][0])
 
 Drugs['preprocessed'].apply(lambda arg: [list(x) for x in arg])
 
-
-# In[18]:
-
-
 Drugs['preprocessed'] = Drugs['preprocessed'].apply(lambda arg: [list(x) for x in arg])
-
-
-# In[19]:
-
 
 Drugs['pos'] = Drugs['preprocessed'].apply(normalized_Corpus)
 
+print(Drugs.head())
 
-# In[20]:
-
-
-Drugs.head()
-
-
-# In[31]:
-
-
-Drugs['pos'][0]
-
-
-# In[68]:
-
+print(Drugs['pos'][0])
 
 m=Drugs['pos'].to_dict()
 l=[]
@@ -212,17 +127,6 @@ for l1 in l:
 
 Drugs['new']=l#pd.Series(l)
 
-
-# In[70]:
-
-
-Drugs.head()
-
-
-# In[ ]:
-
+print(Drugs.head())
 
 Drugs['dict'] = Drugs['pos'].apply({})
-
-
-# In[ ]:
