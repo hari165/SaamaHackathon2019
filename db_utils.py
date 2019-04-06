@@ -2,7 +2,7 @@ import cx_Oracle
 
 def db_connection(username,password):
 	path = username+'/'+password+'@127.0.0.1/XE'
-	con = cx_Oracle(path)
+	con = cx_Oracle.connect(path)
 	#cur = con.cursor()
 	return con
 
@@ -15,4 +15,3 @@ def db_executor(con, sql_text):
 			print(item, end = " ")
 		print("")
 	print("--------------------------------------------------------------------------------------------")
-	
